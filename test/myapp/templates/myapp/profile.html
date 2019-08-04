@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			table {
+   border-collapse: separate;
+   border-spacing: 20px 40px;
+	 
+}
+td{
+padding:10px;
+text-transform:uppercase;
+}
+
+#select{
+
+user-select:none;
+}
+p{
+text-align:center;
+{
+			</style>
+	</head>
+
+	<body>
+		<h1>User Profile</h1>
+		<table >
+			<tr>
+				<td><b>Username:</b></td>
+				<td id="select">{{profile.username}}</td>
+				
+			</tr>
+			
+			<tr>
+				<td><b>Name:</b></td>
+				<td>{{profile.firstname}} {{profile.lastname}}</td>
+			</tr>
+			<tr>
+				<td><b>Email:</b></td>
+				<td>{{profile.email}}</td>
+			</tr>
+			<tr>
+				<td><b>Phone Number:</b></td>
+				<td>{{profile.phone}}</td>
+			</tr>
+		</table>
+		
+{% if profile.username == user.username %}
+		<p><a href="{% url 'update' profile.id %}">Update profile</a><p>
+{% endif %}
+	</body>
+</html>

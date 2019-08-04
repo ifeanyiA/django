@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	
+	<body>
+		<h1>Welcome to sport</h1>
+		{{message}}
+		<form method="post" action="">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">submit</button>
+		</form>
+		{{obj}}
+	</body>
+	
+</html>
