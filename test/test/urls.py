@@ -23,7 +23,8 @@ urlpatterns = [
 		path('', TemplateView.as_view(template_name='home.html'), name='home'),
 		
 		path('myapp/',include('myapp.urls')),
-		
+		 #path('login/',views.LoginView.as_view(template_name="myapp/login.html")),
+
 		
 
 		
