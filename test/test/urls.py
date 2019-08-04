@@ -29,7 +29,7 @@ urlpatterns = [
 		
     path('admin/', admin.site.urls),
     path('', include('django.contrib.auth.urls')),
-    #path('login/',views.LoginView.as_view(template_name="myapp/login.html")),
+    
 
 
     
