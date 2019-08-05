@@ -14,11 +14,9 @@
 	</head>
 
 	<body>	{% if request.POST %}
-		<p class="message">update succesfull</p>
+		<p class="message">update successful</p>
 		
 		{% endif %}
-		
-		
 		<form action="" method="post">
 			{% csrf_token %}
 			{{form.as_p}}

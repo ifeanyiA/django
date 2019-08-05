@@ -46,5 +46,6 @@ def update(request,id):
 				
 				m.save()
 				
+				
 		template="myapp/update.html"
-		return render(request,template,{'form':form})
+		return render(request,template,{'form':form,'obj':obj})
