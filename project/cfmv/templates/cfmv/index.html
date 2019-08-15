@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block style %}
+h1{
+text-align:center;
+padding:10px;
+background:whitesmoke;
+}
+nav>a{
+color:green;
+text-decoration:none;
+font-size:larger;
+}
+
+nav{
+display:flex;
+justify-content:center;
+}
+{% endblock %}
+
+{% block content %}
+<p>Date Time: {{time}}</p>
+<h1>Home page</h1>
+<nav >
+	
+	<a href="{% url 'myform' %}">Click here to fill the form</a>
+</nav>
+{% endblock %}
+
+

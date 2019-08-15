@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block style %}
+h1{
+text-align:center;
+padding:10px;
+background:whitesmoke;
+}
+
+p{
+font-size:larger;
+}
+p input{
+padding:5px;
+border-left-width:8px;
+border-left-color:red;
+}
+#msg{
+color:red;
+}
+
+{% endblock %}
+
+{% block content %}
+<p>Date : {{time}}</p>
+<h1>Form page</h1>
+
+<fieldset>
+	<p id="msg">* You are expected to check the skills you possess.</p>
+	
+	<form method="post" action="">
+		{% csrf_token %}
+	
+		{{form.as_p}}
+		<button type="submit">Sign up</button>
+	</form>
+	
+</fieldset>
+
+{% endblock %}
+
+
