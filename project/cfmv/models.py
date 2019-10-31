@@ -1,11 +1,32 @@
 from django.db import models
 
-class Developer(models.Model):
-		name=models.CharField(verbose_name="Full Name",max_length=30)
-		age=models.IntegerField(default=0)
-		php=models.BooleanField(verbose_name="Php",default=False)
-		django=models.BooleanField(verbose_name="Django",default=False)
-		laravel=models.BooleanField(verbose_name="Laravel",default=False)
+LANGUAGES=[
+('php','Php'),
+('django','Django'),
+('laravel','Laravel'),
+
+]
+
+class DeveloperSkill(models.Model):
+		file_app=models.CharField(max_length=30)
+		
+		def __str__(self):
+				return self.file_app
+				
+				
+				
+				
+class Person(models.Model):
+		name=models.CharField(max_length=30)
+		skills=models.ManyToManyField(DeveloperSkill)
 		
 		def __str__(self):
 				return self.name
+
+				
+class Message(models.Model):
+		message=models.CharField(max_length=100)
+		
+		def __str__(self):
+				return self.message
+				

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+	<html>
+	
+		<head>
+		
+		<style>
+		{% block style %}
+		
+	
+		
+			body{
+
+	background:whitesmoke;
+	}
+	
+	
+	
+	header h1 {
+	background:black;
+	color:white;
+	padding:10px;
+	text-align:center;
+	text-transform:capitalize;
+	font-size:36px;
+	}
+	header p{
+	font-size:24px;
+	
+		text-transform:capitalize;
+	}
+	
+	button{
+	display:block;
+	width:50%;
+	height:40px;
+	font-size:24px;
+	
+	position:absolute;
+	top:50%;
+	margin-top:-20px;
+	left:50%;
+	margin-left:-25%;
+	
+	border-left:4px solid green;
+	outline:none;
+	
+	
+	}
+		
+		{% endblock %}
+		</style>
+		</head>
+		
+		<body>
+		{% block header %}
+		
+		{% endblock %}
+		
+		{% block content %}
+		
+	
+		{% endblock %}
+		
+		
+		</body>
+	</html>

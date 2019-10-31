@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+
+
+
+	{% block style %}
+	
+	
+		header h1 {
+	background:black;
+	color:white;
+	padding:10px;
+	text-align:center;
+	text-transform:capitalize;
+	font-size:36px;
+	}
+	header p{
+	font-size:24px;
+	
+		text-transform:capitalize;
+	}
+	
+	.link{
+	display:flex;
+	justify-content:space-between;
+	
+	
+	}
+	
+	
+		table {
+   border-collapse: separate;
+   border-spacing: 20px 40px;
+	 
+}
+td{
+padding:10px;
+text-transform:Capitalize;
+}
+
+#select{
+
+user-select:none;
+}
+	h1 a{
+	color:white;
+	text-decoration:none;
+	
+	}
+
+
+	 {% endblock %}
+
+{% block header %}
+<header>
+<h1><a href="/">my personal bank</a></h1>
+<p>welcome to mpb,</p>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+		<h1>User Profile</h1>
+		
+		
+		<table >
+			<tr>
+				<td><b>Username:</b></td>
+				<td id="select">{{user.get_username}}</td>
+				
+			</tr>
+			
+			<tr>
+				<td><b>Name:</b></td>
+				<td>{{user.get_full_name}}</td>
+			</tr>
+			<tr>
+				<td><b>Email:</b></td>
+				<td>{{user.email}}</td>
+			</tr>
+			<tr>
+				<td><b>Phone Number:</b></td>
+				<td>{{user.phone}}</td>
+			</tr>
+			
+				
+			
+			
+		</table>
+		
+<div class="link">
+<a href="{% url 'account:update-view' user.id%}"><button> Update Profile</button></a>
+
+
+<a href="{% url 'password_change' %}"><button> Change password </button></a>
+
+
+</div>
+{% if perms.account %}
+
+<p> you have permission</p>
+{% endif %}
+	
+{% endblock %}

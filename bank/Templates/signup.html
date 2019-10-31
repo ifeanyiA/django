@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+
+	{% block style %}
+	body{
+
+	background:whitesmoke;
+	}
+	
+	p label{
+	display:inline-block;
+	width:25%;
+	font-size:30px;
+	}
+	p input{
+	border-left:4px solid red;
+	outline:none;
+	width:50%;
+	font-size:30px;
+	padding:5px;
+	}
+	
+	header h1 {
+	background:black;
+	color:white;
+	padding:10px;
+	text-align:center;
+	text-transform:capitalize;
+	font-size:36px;
+	}
+	header p{
+	font-size:24px;
+	
+		text-transform:capitalize;
+	}
+	
+	
+	 {% endblock %}
+
+{% block header %}
+<header>
+<h1>my personal bank</h1>
+<p>welcome to mpb,</p>
+</header>
+
+{% endblock %}
+
+{% block content %}
+<section>
+<form action='' method='post'>
+{% csrf_token %}
+{{form.as_p}}
+<input type='submit' value='Open Account'/>
+</form>
+
+
+</section>
+
+{% endblock %}

@@ -1,6 +1,6 @@
 from django import forms
-from .models import Developer
-from django.forms import CheckboxInput
+from .models import DeveloperSkill,Person,Message
+from django.forms import CheckboxInput,TextInput
 
 LANGUAGES=[
 ('php','Php'),
@@ -9,27 +9,15 @@ LANGUAGES=[
 
 ]
 
-class DeveloperForm(forms.Form):
-		name=forms.CharField(label="Full Name")
-		age=forms.CharField(widget=forms.NumberInput)
-		php=forms.CharField(widget=forms.CheckboxInput)
-		django=forms.CharField(widget=forms.CheckboxInput)
-		laravel=forms.CharField(widget=forms.CheckboxInput)
-		
-		
-		
 class DeveloperModelForm(forms.ModelForm):
+		skills=forms.ModelMultipleChoiceField(widget=forms.CheckboxSelectMultiple,
+		queryset=DeveloperSkill.objects.all())
 		
 		class Meta:
-				model=Developer
-				fields=['name','age','php','django','laravel']
-				widgets={'php':CheckboxInput(attrs={'name':'language'}),
-				'django':CheckboxInput(attrs={'name':'language'}),
+				model=DeveloperSkill
+				model=Person
+				fields=['name','skills']
 				
-				'laravel':CheckboxInput(attrs={'name':'language'}),
+				widgets={'name':TextInput(attrs={"placeholder":"Enter full name"}),}
 				
-				
-				}
-		
-		
-		
+

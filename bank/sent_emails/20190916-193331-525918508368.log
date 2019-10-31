@@ -1,0 +1,86 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: 
+From: webmaster@localhost
+To: iifeanyi570@gmail.com
+Date: Mon, 16 Sep 2019 18:33:31 -0000
+Message-ID: <156865881140.18347.15405752000772109291@localhost>
+
+<!DOCTYPE html>
+	<html>
+	
+		<head>
+		
+		<style>
+		
+		
+	
+		
+			body{
+
+	background:whitesmoke;
+	}
+	
+	
+	
+	header h1 {
+	background:black;
+	color:white;
+	padding:10px;
+	text-align:center;
+	text-transform:capitalize;
+	font-size:36px;
+	}
+	header p{
+	font-size:24px;
+	
+		text-transform:capitalize;
+	}
+	
+	button{
+	display:block;
+	width:50%;
+	height:40px;
+	font-size:24px;
+	
+	position:absolute;
+	top:50%;
+	margin-top:-20px;
+	left:50%;
+	margin-left:-25%;
+	
+	border-left:4px solid green;
+	outline:none;
+	
+	
+	}
+		
+		
+		</style>
+		</head>
+		
+		<body>
+		
+		
+		
+		
+		
+
+<p>you received this email because you requested to reset your password</p>
+<p>Go to this link to reset password</p>
+<p>
+	http://localhost:8000/accounts/reset/MQ/59s-eea46ef8e83e2c8d2f46
+	
+	
+	
+	
+</p>
+<p>if you didn't request for this login :http://localhost:8000/account/
+
+
+		
+		
+		</body>
+	</html>
+-------------------------------------------------------------------------------

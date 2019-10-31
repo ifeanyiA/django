@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+
+
+	{% block style %}
+
+
+ul li{
+font-size:24px;
+}
+
+header h1 {
+background:black;
+color:white;
+padding:10px;
+text-align:center;
+text-transform:capitalize;
+font-size:36px;
+}
+header p{
+font-size:24px;
+
+text-transform:capitalize;
+}
+
+.button{
+display:block;
+width:50%;
+height:40px;
+font-size:24px;
+
+position:absolute;
+bottom:2%;
+
+left:50%;
+margin-left:-25%;
+
+border-left:4px solid green;
+outline:none;
+
+
+}
+.p{
+font-size:36px;
+float:left;
+background:black;
+color:white;
+text-transform:capitalize;
+width:50%;
+margin:0 auto;
+}
+.p:nth-child(3){
+text-align:right;
+}
+.acc{
+
+font-size:48px;
+}
+
+
+table {
+
+border-collapse: separate;
+
+border-spacing: 120px 20px;
+border:none;
+user-select:none;
+
+
+}	
+table td{
+padding:10px;
+font-size:24px;
+
+
+}
+
+.amt{
+
+font-size:48px;
+user-select:none;
+}
+
+button{
+display:inline-block;
+width:33%;
+height:50px;
+font-size:36px;
+text-transform:capitalize;
+}
+
+.act{
+
+width:100%;
+font-size:36px;
+text-align:center;
+background:black;
+color:white;
+text-transform:capitalize;
+}
+
+p a{
+color:white;
+text-decoration:none;
+
+}
+	
+	
+	
+	
+		body{
+
+	background:whitesmoke;
+	}
+	
+	
+	
+	header h1 {
+	background:black;
+	color:white;
+	padding:10px;
+	text-align:center;
+	text-transform:capitalize;
+	font-size:36px;
+	}
+	header p{
+	font-size:24px;
+	border-radius:5px;
+		text-transform:capitalize;
+	}
+	
+	button .button{
+	display:block;
+	width:50%;
+	height:40px;
+	font-size:24px;
+	
+	position:absolute;
+	top:50%;
+	margin-top:-20px;
+	left:50%;
+	margin-left:-25%;
+	
+	border-left:4px solid green;
+	outline:none;
+	
+	
+	}
+	
+	.transaction{
+	
+	padding:20px 0;
+	border-radius:5px;
+	
+	}
+	.p{
+	padding-top:5px;
+	}
+	
+	
+	.btn{
+	
+	top:45%;}
+	
+	 {% endblock %}
+	 
+	 
+	 {% endblock %}
+	 
+	 
+	 
+
+{% block header %}
+<header>
+<h1>my personal bank</h1>
+<p>welcome to mpb,</p>
+</header>
+
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+
+<p class='p'>Welcome {{user.get_short_name}} ! </p> 
+<p class='p'><a href="{% url 'account:profile' %}">Profile</a></p>
+<br><br>
+<section class='account'>
+
+	<p class='acc'> Account Balance: </p>
+
+
+	<p class='amt'>€{{user.balance}}</p>
+
+	<div class='transaction'>
+
+	<a href="#"><button class="my_btn">Withdraw funds</button></a>
+	<a href="#"><button class="my_btn">Deposit funds</button></a>
+	<a href="#"><button>Transfer funds</button></a>
+	
+
+	</div>
+
+
+</section>
+
+<div>
+	{% if user.is_staff %}
+	
+	<a href='admin/'><button>Dashboard</button></a>
+	{% endif %}
+	
+	
+	
+</div>
+<a href=" {% url 'logout' %}">
+	<button class='button'>Logout</button>
+	
+	
+	
+</a>
+
+
+
+
+
+
+
+{% else %}
+
+
+<section>
+<a href='{% url 'login' %}'>
+<button class='btn'>Login</button>
+</a><br><br>
+<a href='{% url 'signup' %}'>
+<button >Open an account</button>
+</a>
+
+</section>
+{% endif %}
+{% endblock %}

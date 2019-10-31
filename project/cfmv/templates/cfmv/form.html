@@ -26,8 +26,9 @@ color:red;
 <h1>Form page</h1>
 
 <fieldset>
-	<p id="msg">* You are expected to check the skills you possess.</p>
-	
+	{% for text in msg %}
+	<p id="msg">*{{text.message}}</p>
+	{% endfor %}
 	<form method="post" action="">
 		{% csrf_token %}
 	
